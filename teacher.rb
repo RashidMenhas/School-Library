@@ -1,4 +1,3 @@
-
 require './person'
 
 class Teacher < Person
