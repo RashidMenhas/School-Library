@@ -1,3 +1,5 @@
+require 'json'
+
 class ReadData
   def read_books
     books = []
@@ -11,4 +13,3 @@ class ReadData
     file.close
     books
   end
-end
