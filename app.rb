@@ -4,18 +4,22 @@ require './teacher'
 require './book'
 require './rental'
 require './prompt_user'
-
+require './save_data'
+require './read_data'
 
 class App
   attr_reader :books, :people, :rentals
 
   def initialize
-    @books = []
-    @people = []
-    @rentals = []
+    @books = ReadData.new.read_books
+    @people = ReadData.new.read_people
+    @rentals = ReadData.new.read_rentals
   end
 
   def quit_app
+    SaveData.new.save_books(@books)
+    SaveData.new.save_people(@people)
+    SaveData.new.save_rentals(@rentals)
     puts 'Thank you for using this app! Now exiting...😊 '
     exit
   end
