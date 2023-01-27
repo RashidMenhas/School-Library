@@ -1,0 +1,34 @@
+[
+  {
+    "id": 88,
+    "name": "Rashid menhas",
+    "age": 23,
+    "has_permission": true,
+    "type": "Student",
+    "classroom": "5th"
+  },
+  {
+    "id": 78,
+    "name": "awais haider",
+    "age": 55,
+    "has_permission": true,
+    "type": "Teacher",
+    "specialization": "coding"
+  },
+  {
+    "id": 29,
+    "name": "awais haider",
+    "age": 55,
+    "has_permission": true,
+    "type": "Teacher",
+    "specialization": "java"
+  },
+  {
+    "id": 46,
+    "name": "Rashid",
+    "age": 45,
+    "has_permission": true,
+    "type": "Student",
+    "classroom": "12th"
+  }
+]

@@ -60,7 +60,7 @@ class SaveData
         has_permission: rental.person.parent_permission,
         type: rental.person.type
       }
-      if (rental.person.type == 'Student')
+      if rental.person.type == 'Student'
         rental_obj[:classroom] = rental.person.classroom
       else
         rental_obj[:specialization] = rental.person.specialization
