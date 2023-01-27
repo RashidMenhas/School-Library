@@ -3,7 +3,7 @@ require './student'
 require './teacher'
 require './book'
 require './rental'
-require './prompt_user.rb'
+require './prompt_user'
 
 
 class App
