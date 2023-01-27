@@ -48,29 +48,29 @@ class SaveData
   
   end
 
-  # def save_rentals(rentals)
-  #   rentals_array = []
-  #   rentals.each do |rental|
-  #     rental_obj = {
-  #       date: rental.date,
-  #       title: rental.book.title, 
-  #       author: rental.book.author,
-  #       id: rental.person.id,
-  #       name: rental.person.name,
-  #       age: rental.person.age,
-  #       has_permission: rental.person.parent_permission,
-  #       type: rental.person.type
-  #     }
-  #     if rental.person.type = 'Student'
-  #       rental_obj[:classroom] = rental.person.classroom
-  #     else
-  #       rental_obj[:specialization] = rental.person.specialization
-  #     end
-  #     rentals_array << rental_obj
-  #   end
-  #   return if rentals_array.empty?
+  def save_rentals(rentals)
+    rentals_array = []
+    rentals.each do |rental|
+      rental_obj = {
+        date: rental.date,
+        title: rental.book.title, 
+        author: rental.book.author,
+        id: rental.person.id,
+        name: rental.person.name,
+        age: rental.person.age,
+        has_permission: rental.person.parent_permission,
+        type: rental.person.type
+      }
+      if rental.person.type = 'Student'
+        rental_obj[:classroom] = rental.person.classroom
+      else
+        rental_obj[:specialization] = rental.person.specialization
+      end
+      rentals_array << rental_obj
+    end
+    return if rentals_array.empty?
 
-  #   check_file_exists('rentals')
-  #   File.write('./data/rentals.json', JSON.pretty_generate(rentals_array))
-  # end
+    check_file_exists('rentals')
+    File.write('./data/rentals.json', JSON.pretty_generate(rentals_array))
+  end
 end
