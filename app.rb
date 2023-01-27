@@ -3,7 +3,7 @@ require './student'
 require './teacher'
 require './book'
 require './rental'
-require './prompt_user.rb'
+require './prompt_user'
 
 
 class App
@@ -16,7 +16,7 @@ class App
   end
 
   def quit_app
-    puts 'Thank you for using this app! Now exiting...😊'
+    puts 'Thank you for using this app! Now exiting...😊 '
     exit
   end
 
@@ -50,7 +50,7 @@ class App
     print 'Age: '
     age = gets.chomp.to_i
 
-    print 'Classroom: (B121, A233..) '
+    print 'Classroom:  '
     classroom = gets.chomp
 
     print 'Name: '
