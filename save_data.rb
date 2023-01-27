@@ -32,21 +32,21 @@ class SaveData
     File.write('./data/people.json', JSON.pretty_generate(people_array)) 
   end
 
-  # def save_books(books)
-  #   books_array =[]
-  #   books.each do |book|
-  #     book_obj = {
-  #       title: book.title,
-  #       author: book.author
-  #     }
-  #     books_array << book_obj
-  #   end
-  #   return if books_array.empty?
+  def save_books(books)
+    books_array =[]
+    books.each do |book|
+      book_obj = {
+        title: book.title,
+        author: book.author
+      }
+      books_array << book_obj
+    end
+    return if books_array.empty?
 
-  #   check_file_exists('books')
-  #   File.write('./data/books.json', JSON.pretty_generate(books_array))
+    check_file_exists('books')
+    File.write('./data/books.json', JSON.pretty_generate(books_array))
   
-  # end
+  end
 
   # def save_rentals(rentals)
   #   rentals_array = []
