@@ -6,7 +6,7 @@ class PromptUser
     MenuDisplay.new.menu
 
     choice = gets.chomp.to_i
-    choice == 7 ? quit_app : Options.new.option_case(choice, app)
+    choice == 7 ? app.quit_app : Options.new.option_case(choice, app)
 
     prompt_user(app)
   end
