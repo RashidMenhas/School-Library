@@ -10,16 +10,16 @@ class SaveData
   end
 
   def save_people(people)
-    people_array =[]
+    people_array = []
     people.each do |person|
-      person_obj ={
+      person_obj = {
         id: person.id,
         name: person.name,
         age: person.age,
         has_permission: person.parent_permission,
         type: person.type
       }
-      if person.type =='Student'
+      if person.type == 'Student'
         person_obj[:classroom] = person.classroom
       else
         person_obj[:specialization] = person.specialization
@@ -29,11 +29,11 @@ class SaveData
     return if people_array.empty?
 
     check_file_exists('people')
-    File.write('./data/people.json', JSON.pretty_generate(people_array)) 
+    File.write('./data/people.json', JSON.pretty_generate(people_array))
   end
 
   def save_books(books)
-    books_array =[]
+    books_array = []
     books.each do |book|
       book_obj = {
         title: book.title,
@@ -45,7 +45,6 @@ class SaveData
 
     check_file_exists('books')
     File.write('./data/books.json', JSON.pretty_generate(books_array))
-  
   end
 
   def save_rentals(rentals)
@@ -53,7 +52,7 @@ class SaveData
     rentals.each do |rental|
       rental_obj = {
         date: rental.date,
-        title: rental.book.title, 
+        title: rental.book.title,
         author: rental.book.author,
         id: rental.person.id,
         name: rental.person.name,
@@ -61,7 +60,7 @@ class SaveData
         has_permission: rental.person.parent_permission,
         type: rental.person.type
       }
-      if rental.person.type = 'Student'
+      if (rental.person.type == 'Student')
         rental_obj[:classroom] = rental.person.classroom
       else
         rental_obj[:specialization] = rental.person.specialization
