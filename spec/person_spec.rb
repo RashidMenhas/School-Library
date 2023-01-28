@@ -44,5 +44,15 @@ describe Person do
       expect(@person2).not_to respond_to(:of_age?)
     end
   end
+  context 'When using can_use_services method' do
+    it 'can use_services' do
+      expect(@person1).to respond_to(:can_use_services?)
+      expect(@person2).to respond_to(:can_use_services?)
+    end
+    it 'should return false for Little Simth and true for Elrond HalfElf' do
+      expect(@person1.can_use_services?).to be false
+      expect(@person2.can_use_services?).to be true
+    end
+  end
 
 end
