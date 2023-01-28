@@ -38,5 +38,11 @@ describe Person do
       expect(@person1.rentals.count).to eq(2)
     end
   end
- 
+  context 'When using of_age method' do
+    it 'can not use of_age since it\'s private' do
+      expect(@person1).not_to respond_to(:of_age?)
+      expect(@person2).not_to respond_to(:of_age?)
+    end
+  end
+
 end
