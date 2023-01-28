@@ -22,5 +22,21 @@ describe Person do
       expect(@person1).to be_instance_of Person
     end
   end
-
+  context 'When adding a rental for a Person' do
+    it 'can add a rental' do
+      expect(@person1).to respond_to(:add_rental)
+    end
+    it 'has it\'s rentals array length increased' do
+      expect(@person1.rentals.count).to eq(1) # => from the @rental instance
+      Rental.new(Time.now, @person1, @book2)
+      expect(@person1.rentals.count).to eq(2)
+    end
+    it 'can add a new rental with add_rental method' do
+      expect(@person1.rentals.count).to eq(1) # => from the @rental instance
+      rental = Rental.new(Time.now, @person2, @book3)
+      @person1.add_rental(rental)
+      expect(@person1.rentals.count).to eq(2)
+    end
+  end
+ 
 end
