@@ -1,0 +1,13 @@
+[
+  {
+    "date": "2002/20/01",
+    "title": "java",
+    "author": "Sami ullah",
+    "id": 29,
+    "name": "awais haider",
+    "age": 55,
+    "has_permission": true,
+    "type": "Teacher",
+    "specialization": "java"
+  }
+]
