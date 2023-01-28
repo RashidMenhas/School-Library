@@ -21,5 +21,19 @@ describe Rental do
       expect(@rental2).to be_instance_of Rental
     end
   end
-
+  context 'Person and Book rentals object should not be empty' do
+    it '@person.rentals should be of size 2' do
+      expect(@person1.rentals.count).to eq 2
+    end
+    it '@book1.rentals should be of size 1' do
+      expect(@book1.rentals.count).to eq 1
+    end
+    it '@book2.rentals should be of size 1' do
+      expect(@book2.rentals.count).to eq 1
+    end
+    it '@book1.rentals should be of size 2 after adding new rental' do
+      Rental.new(Time.now, @person2, @book1)
+      expect(@book1.rentals.count).to eq 2
+    end
+  end
 end
