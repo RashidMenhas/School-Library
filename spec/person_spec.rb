@@ -54,5 +54,14 @@ describe Person do
       expect(@person2.can_use_services?).to be true
     end
   end
-
+  context 'When using correct_name method' do
+    it 'can use correct_name' do
+      expect(@person1).to respond_to(:correct_name)
+      expect(@person2).to respond_to(:correct_name)
+    end
+    it 'should return false for Little Simth and true for Elrond HalfElf' do
+      expect(@person1.correct_name).to eql 'Little Smith'
+      expect(@person2.correct_name).to eql 'Elrond HalfElf'
+    end
+  end
 end
