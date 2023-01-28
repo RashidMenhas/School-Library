@@ -1,4 +1,5 @@
 require_relative '../person'
-require_relative '../capitalizedecorator'
-require_relative '../trimmerdecorator'
+require_relative '../nameable'
+
+
 
