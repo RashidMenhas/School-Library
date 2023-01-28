@@ -5,6 +5,7 @@ describe Person do
   before :each do
     @person1 = Person.new(12, name: 'Little Smith', parent_permission: false)
     @person2 = Person.new(500, name: 'Elrond HalfElf')
+    @person3 = Person.new(55)
     @book1 = Book.new('Game of Thrones', 'George Martin')
     @book2 = Book.new('The Songs of Achilles', 'Madelaine Miller')
     @book3 = Book.new('The Lord of the Rings', 'Tolkien')
@@ -62,6 +63,9 @@ describe Person do
     it 'should return false for Little Simth and true for Elrond HalfElf' do
       expect(@person1.correct_name).to eql 'Little Smith'
       expect(@person2.correct_name).to eql 'Elrond HalfElf'
+    end
+    it 'if we do not provide a name it should return us the default value "Unknown".' do
+      expect(@person3.correct_name).to eql 'Unknown'
     end
   end
 end
