@@ -10,4 +10,16 @@ describe Rental do
     @rental1 = Rental.new('2022/11/09', @person1, @book1)
     @rental2 = Rental.new(Time.now, @person1, @book2)
   end
+  context 'When creating a new Rental' do
+    it 'should have the following attributes (date, person, book)' do
+      expect(@rental1.date).to eql '2022/11/09'
+      expect(@rental1.person).to be_instance_of Person
+      expect(@rental1.book).to be_instance_of Book
+    end
+    it 'should be an instance of the class Rental' do
+      expect(@rental1).to be_instance_of Rental
+      expect(@rental2).to be_instance_of Rental
+    end
+  end
+
 end
